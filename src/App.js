@@ -23,40 +23,40 @@ class App extends React.Component {
         {
           image: 'http://pop-culturalist.com/wp-content/uploads/2017/02/BarneyStinson-1024x579.jpg',
           text: 'me when I know tomorrow is Friday'
-        }, 
-    ],
-    image: '',
-    text: ''
+        },
+      ],
+      image: '',
+      text: ''
     }
 
   }
 
   handleChangeImage = (e) => {
-    this.setState({image: e.target.value})
+    this.setState({ image: e.target.value })
   }
 
   handleChangeText = (e) => {
-    this.setState({ text: e.target.value})
+    this.setState({ text: e.target.value })
   }
 
   handleClick = () => {
-    const {image, text, posts} = this.state
+    const { image, text, posts } = this.state
     this.setState({
-      posts: [{image, text}, ...posts]
+      posts: [{ image, text }, ...posts]
     })
   }
 
   render() {
-    const {posts} = this.state;
-    return(
+    const { posts } = this.state;
+    return (
       <div>
         <h2>Our SM site</h2>
-        <NewPost 
-        handleChangeImage={this.handleChangeImage} 
-        handleChangeText={this.handleChangeText}
-        handleClick={this.handleClick}
+        <NewPost
+          handleChangeImage={this.handleChangeImage}
+          handleChangeText={this.handleChangeText}
+          handleClick={this.handleClick}
         />
-        <Post posts={posts}/>
+        <Post posts={posts} />
       </div>
     )
   }
